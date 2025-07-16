@@ -12,15 +12,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const AnekTelugo = Anek_Telugu({
+const AnekTelugu = Anek_Telugu({
   variable: "--font-caption",
-  subsets: ["telugu"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Sébbatien Glippa Developper",
+  title: "Sébastien Glippa Developper",
   description:
-    "Portfolio of Sébbatien Glippa, a developer specializing in web technologies.",
+    "Portfolio of Sébastien Glippa, a developer specializing in web technologies.",
 };
 
 export default function RootLayout({
@@ -29,9 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${AnekTelugo.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${AnekTelugu.variable} antialiased h-full font-sans bg-background text-foreground`}
       >
         {children}
       </body>
