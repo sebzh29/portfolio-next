@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Anek_Telugu, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
+const GeistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const GeistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -31,10 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={
-          `${geistSans.variable} ${geistMono.variable} ${AnekTelugu.variable}` +
-          "antialiased h-full font-sans bg-background text-foreground"
-        }
+        className={cn(
+          GeistSans.variable,
+          GeistMono.variable,
+          AnekTelugu.variable,
+          "h-full font-sans bg-background text-foreground"
+        )}
       >
         {children}
       </body>
